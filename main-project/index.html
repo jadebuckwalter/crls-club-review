@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset-"UTF-8">
+    <title>CRLS Club Review</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <!-- setting up the header for page -->
+    <div id="headerContainer">
+        <img id="logo" src="Images/Logo.png" alt="Red falcon">
+        <header>Club Review</header>
+        <img id="searchIcon" src="Images/searchIcon.png" alt="Search Icon">
+        <input type="text" id="searchBar" name="searchBar" placeholder="Search for a club, subject, teacher, or room">
+        <button id="signUp" type="button">Sign Up</button>
+    </div>
+
+    <!-- created the navigation bar -->
+    <nav>
+        <button class="navBtn" onclick="navFunction(this)" id="ela" type="button">ELA</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="math" type="button">Math</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="scienceTech" type="button">Science &amp; Technology</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="communityService" type="button">Community Service</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="musicArts" type="button">Music &amp; Arts</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="religion" type="button">Religion</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="athletics" type="button">Athletics</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="athletics" type="button">Social/Political Activisim</button>
+    </nav>
+
+    <!-- creating header to display club information -->
+    <div>
+        <h1 id="tabName"> All Clubs</h1>
+        <h4 id="classesFound">66 Clubs Found</h4>
+        <!--Maybe add dropdown menu in this div -->
+    </div>
+
+    <div class="club-container">
+        <section onclick="location.href='#';">
+            <img src="Images/random.JPG" alt="random image">
+            <div id="bottom-sec">
+                <h2 class="bottom-text">Biology</h2>
+                <h3 class="bottom-text"> Teacher: John Leefolt</h3>
+                <h3 class="bottom-text"> Room: 203</h3>
+            </div>
+        </section>
+        <section> 2</section>
+        <section> 3</section>
+        <section> 4</section>
+        <section> 5</section>
+        <!--<section> 6</section>-->
+    </div>
+
+
+    <!-- footer area -->
+    <footer>
+        <h4> &#169; 2020 Club Review</h4>
+        <h3>School Name</h3>
+        <h6>Developed By: Computer Science Club</h6>
+        <h6>Contact for more information at: <a href="#"> email@yahoo.com</a></h6>
+
+    </footer>
+
+</body>
+
+</html>
