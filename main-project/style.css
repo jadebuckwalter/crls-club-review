@@ -41,6 +41,7 @@ header {
 }
 
 #signUp {
+    visibility: hidden;
     position: absolute;
     width: 125px;
     height: 50px;
@@ -213,6 +214,7 @@ nav button:hover {
 }
 
 .club-container section {
+    display: none;
     background: #F2F7F2;
     float: left;
     color: black;
