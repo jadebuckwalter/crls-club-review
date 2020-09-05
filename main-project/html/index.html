@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head SameSite=strict>
+    <meta charset-"UTF-8">
+    <title>CRLS Club Review</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+    <!-- setting up the header for page -->
+    <div id="headerContainer">
+        <img id="logo" src="../Images/Logo.png" alt="Red falcon">
+        <header>Club Review</header>
+        <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
+        <input type="text" id="searchBar" name="searchBar" placeholder="Search for a club, subject, teacher, or room">
+    </div>
+
+    <!-- created the navigation bar -->
+    <nav>
+        <button class="navBtn" onclick="navFunction(this)" id="ela" type="button">English & History</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="stem" type="button">STEM</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="communityService" type="button">Community Service</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="musicArts" type="button">Music &amp; Arts</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="religion" type="button">Religion & Culture</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="politics" type="button">Politics</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="activism" type="button">Activisim</button>
+
+        <button class="navBtn" onclick="navFunction(this)" id="miscellaneous" type="button">Additional Clubs</button>
+    </nav>
+
+    <!-- creating header to display club information -->
+    <div>
+        <h1 id="tabName"> Click A Section to Find Clubs</h1>
+        <h4 id="classesFound">There are 66 Clubs</h4>
+        <!--Maybe add dropdown menu in this div -->
+    </div>
+
+    <!-- Is meant for the welcome screen -->
+    <div id="welcome">
+        <h1> Welcome to Club Review</h1>
+        <img src="../Images/Logo.png" alt="logo">
+        <h3> Search through more than 60+ clubs that CRLS has to offer and sign up for the one that is right for you!</h3>
+        <h6> Click a section in the navigation bar to get started.</h6>
+    </div>
+
+    <!-- Content that displays all the clubs as well as individual sections -->
+    <div id="content" class="club-container">
+        <section id="knownSec" onclick="indCoursePage(this)">
+            <!-- location.href='#' -->
+            <img src="../Images/random.JPG" alt="random image">
+            <div id="bottom-sec">
+                <h2 class="bottom-text">Biology</h2>
+                <h3 class="bottom-text"> Teacher: John Leefolt</h3>
+                <h4 class="bottom-text"> Room: 203</h4>
+                <p id="time" class="hideInfo"></p>
+                <p id="desc" class="hideInfo"></p>
+            </div>
+        </section>
+
+        <section id="indPage">
+            <div id="imgName">
+                <img src="../Images/random.JPG" alt="random image">
+                <h1>Biology</h1>
+            </div>
+            <div id="botSec">
+                <h3 id="advisor"> Advisor: AnneMarie Curie</h3>
+                <h3 id="room"> Room: 1234 or Media Club</h3>
+                <h3 id="time"> Meet time: Wednesday 2:30pm-3:30pm</h3>
+                <p></p>
+                <!-- Maybe add ability for people to see links to various sites for those clubs -->
+                <!-- <h5>Link: </h5>
+                <a href="https://www.instagram.com/crls.cs/" target="_blank">Insta Page</a> -->
+            </div>
+        </section>
+        <button id="signUp" type="button" onclick="signUpClicked()">Sign Up</button>
+    </div>
+
+
+    <!-- footer area -->
+    <footer>
+        <h4> &#169; 2020 Club Review</h4>
+        <h3>School Name</h3>
+        <h6>Developed By: Computer Science Club</h6>
+        <!-- maybe add this back in? Not rlly sure if it is necessary tho... <h6>Contact for more information at: <a href="#"> email@yahoo.com</a></h6> -->
+
+    </footer>
+
+    <script type="text/javascript" src="../js/main.js" defer></script>
+</body>
+
+</html>
