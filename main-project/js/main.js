@@ -1,3 +1,7 @@
+/* declaring global variable for later use in signUpClicked() function */
+var clubName = "";
+
+
 /* arrays are in this order [english/history[club name, advisor name, location, img, meet time, description], stem, community service, music/arts, religion, athletics, activism, culture]
 
 Inside those arrays are the names of all clubs associated with it... the 2d array shows the club and name and all the associated information */
@@ -118,6 +122,9 @@ function navFunction(elm) {
     document.getElementById("knownSec").style.display = "none";
 
     /* creates the content for the content section */
+    /*
+    Ask other clubs to send an image they want to go on the site as well as the description, meet times, advisor, and room num.
+    */
     for (i = 1; i < obj[elm.id].length + 1; i++) {
         var newSec = document.getElementById('knownSec').cloneNode(true);
         newSec.setAttribute('id', i);
@@ -192,6 +199,7 @@ function indCoursePage(oneElm) {
 
     /* elmDict["num"] = oneElm.id; */
     ind.querySelector("h1").innerHTML = oneElm.querySelector("h2").textContent;
+    clubName = String(oneElm.querySelector("h2").textContent);
     ind.querySelector("img").src = oneElm.querySelector("img").src;
     ind.querySelector("#advisor").innerHTML = oneElm.querySelector("h3").textContent;
     ind.querySelector("#room").innerHTML = oneElm.querySelector("h4").textContent;
@@ -213,7 +221,10 @@ function indCoursePage(oneElm) {
 }
 
 function signUpClicked() {
-    if (confirm("Do you want to sign-up for Computer Science Club?")) {
-        /* add a link to a google form for students to sign-up */
-    }
+
+    /* allow students to open a google form that is specifically made for one club
+    In order to do this maybe create another js object that has the urls for all the google forms
+    */
+    /* the url currently in this string will be replaced */
+    window.open("https://www.retailmenot.com/blog/virtual-volunteer-opportunities.html", '_blank');
 }
