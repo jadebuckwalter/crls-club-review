@@ -227,5 +227,5 @@ function signUpClicked() {
     */
     /* the url currently in this string will be replaced */
     /* window.open("https://www.retailmenot.com/blog/virtual-volunteer-opportunities.html", '_blank'); */
-    window.open(https://forms.gle/f7mXngHHuJ2ZeV6y8", '_blank');
+    window.open("https://forms.gle/f7mXngHHuJ2ZeV6y8", '_blank');
 }
