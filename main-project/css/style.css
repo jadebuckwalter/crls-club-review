@@ -86,6 +86,45 @@ header {
     z-index: 2;
 }
 
+/* Invalid Search Popup */
+#invalidSearch {
+    visibility: hidden;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    width: 525px;
+    height: 500px;
+    text-align: center;
+    transform: translate(-50%, -45%);
+
+}
+
+#invalidSearch h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+
+    color: black;
+}
+
+#invalidSearch p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: center;
+
+    color: #051014;
+}
+
+#invalidSearch a {
+    color: black;
+}
+
 /* navigation panel */
 nav {
     position: absolute;
@@ -162,7 +201,7 @@ nav button:hover {
 }
 
 #welcome h1 {
-    margin-top: px;
+
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
