@@ -16,7 +16,7 @@
         <img id="logo" src="../Images/Logo.png" alt="Red falcon">
         <header>Club Registration</header>
         <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
-        <input type="text" id="searchBar" name="searchBar" placeholder="Search for a club, subject, teacher, or room">
+        <input type="text" id="searchBar" onkeypress="search(event)" onkeyup="setValue(this)" name="searchBar" placeholder="Search for a club, teacher, or room" />
     </div>
 
     <!-- created the navigation bar -->
@@ -45,9 +45,16 @@
         <!--Maybe add dropdown menu in this div -->
     </div>
 
+    <!-- Displayed when no results are given for a search -->
+    <div id="invalidSearch">
+
+        <h1> Invalid Search</h1>
+        <p> We were unable to find a match for your search. Please try a different keyword or use the navigation bar. We are still updating the search functionality and apologize for any inconvenience. If you have suggestions please head over to our <a href="https://github.com/PZR2000/crls-club-review.git">Github Page</a> and create an issue so we can resolve it. </p>
+    </div>
+
     <!-- Is meant for the welcome screen -->
     <div id="welcome">
-        <h1> Welcome to Club Registration</h1>
+        <h1> Welcome to CRLS Club Registration</h1>
         <img src="../Images/Logo.png" alt="logo">
         <h3> Search through more than 60+ clubs that CRLS has to offer and sign up for the one that is right for you!</h3>
         <h6> Click a section in the navigation bar to get started.</h6>
