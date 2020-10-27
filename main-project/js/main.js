@@ -779,7 +779,7 @@ function showSearchedClubs(club) {
         newSec.querySelector("h2").innerHTML = club[i].club;
         newSec.querySelector("h3").innerHTML = "Advisor: " + club[i].advisor;
         newSec.querySelector("h4").innerHTML = "Room: " + club[i].location;
-        /*newSec.querySelector("img").src = "Images/" + obj.ela[i - 1][3];*/
+        newSec.querySelector("img").src = "../Images/" + club[i].img;
         if (club[i].hasOwnProperty('desc')) {
             newSec.querySelector("#desc").innerHTML = club[i].desc;
             newSec.querySelector("#time").innerHTML = club[i].time;
