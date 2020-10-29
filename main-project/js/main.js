@@ -171,7 +171,7 @@ const clubsArray = [
         "tags": [
             "communityService"
         ],
-        "img": "bookClub.png"
+        "img": "club4.png"
     },
     {
         "club": "Habitat for Humanity Club",
@@ -180,7 +180,7 @@ const clubsArray = [
         "tags": [
             "communityService"
         ],
-        "img": "bookClub.png"
+        "img": "hab4human.png"
     },
     {
         "club": "Student Government",
@@ -189,7 +189,7 @@ const clubsArray = [
         "tags": [
             "communityService"
         ],
-        "img": "bookClub.png"
+        "img": "studGov.png"
     },
     {
         "club": "National Honor's Society",
@@ -198,7 +198,7 @@ const clubsArray = [
         "tags": [
             "communityService"
         ],
-        "img": "bookClub.png"
+        "img": "nhs.png"
     },
     {
         "club": "A Capella Club",
@@ -207,7 +207,7 @@ const clubsArray = [
         "tags": [
             "musicArts"
         ],
-        "img": "bookClub.png"
+        "img": "acapella.png"
     },
     {
         "club": "Ceramics Club",
@@ -729,10 +729,10 @@ function searchClubs() {
     upperVal = val.toUpperCase();
 
     for (i = 0; i < clubsArray.length; i++) {
-        // chosenClub[i] = clubsArray[i].advisor.toUpperCase()
-        if (clubsArray[i].advisor.toUpperCase() == upperVal) {
+
+        if (clubsArray[i].advisor.toUpperCase() == upperVal || clubsArray[i].advisor.toUpperCase().split(" ").includes(upperVal)) {
             chosenClub.push(clubsArray[i])
-        } else if (clubsArray[i].club.toUpperCase() == upperVal) {
+        } else if (clubsArray[i].club.toUpperCase() == upperVal || clubsArray[i].club.toUpperCase().split(" ").includes(upperVal)) {
             chosenClub.push(clubsArray[i])
         } else if (clubsArray[i].location === val.toLowerCase()) {
             chosenClub.push(clubsArray[i])
