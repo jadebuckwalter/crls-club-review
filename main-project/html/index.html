@@ -1,106 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- WE NEED TO SPECIFY WHETHER COOKIES WILL BE SENT TO THIRD_PARTIES... they should not be sent so samesite=strict, but I don't know where to put this in the code -->
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head SameSite=strict>
-    <meta charset-"UTF-8">
-    <title>CRLS Club Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 
 <body>
-    <!-- setting up the header for page -->
-    <div id="headerContainer">
-        <img id="logo" src="../Images/Logo.png" alt="Red falcon">
-        <header>Club Registration</header>
-        <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
-        <input type="text" id="searchBar" onkeypress="search(event)" onkeyup="setValue(this)" name="searchBar" placeholder="Search for a club, teacher, or room" />
+
+    <!-- header created for page -->
+    <div class="container-fluid" id="headerContainer">
+        <div class="row justify-content-sm-left">
+            <div class="col-sm-2 d-flex justify-content-center">
+                <img class="img-responsive" id="logo" src="../Images/Logo.png" alt="Red falcon">
+            </div>
+            <div class="col-sm-2 d-flex justify-content-center">
+                <header>Club Registration</header>
+            </div>
+            <div class="col-sm d-flex justify-content-center">
+                <div id="input_container">
+                    <input class="form-control" type="text" id="searchBar" onkeypress="search(event)" onkeyup="setValue(this)" name="searchBar" placeholder="Search for a Club, Teacher, or Room" aria-label="Search" />
+                    <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- created the navigation bar -->
-    <nav>
-        <button class="navBtn" onclick="navFunction(this)" id="ela" type="button">English & History</button>
+    <!-- Navigation menu created -->
+    <nav class="navbar navbar-expand-xl navbar-light" id="persNav">
 
-        <button class="navBtn" onclick="navFunction(this)" id="stem" type="button">STEM</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" id="dropButton" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <p> Club Themes</p>
+        </button>
 
-        <button class="navBtn" onclick="navFunction(this)" id="communityService" type="button">Community Service</button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="nav navbar-nav">
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="ela">English &amp; History</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="stem">STEM</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="communityService">Community Service</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="musicArts">Music &amp; Arts</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="religion">Religion &amp; Culture</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="politics">Politics</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="activism">Activisim</a></li>
+                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="miscellaneous">Additional Clubs</a></li>
+            </ul>
+        </div>
 
-        <button class="navBtn" onclick="navFunction(this)" id="musicArts" type="button">Music &amp; Arts</button>
-
-        <button class="navBtn" onclick="navFunction(this)" id="religion" type="button">Religion & Culture</button>
-
-        <button class="navBtn" onclick="navFunction(this)" id="politics" type="button">Politics</button>
-
-        <button class="navBtn" onclick="navFunction(this)" id="activism" type="button">Activisim</button>
-
-        <button class="navBtn" onclick="navFunction(this)" id="miscellaneous" type="button">Additional Clubs</button>
     </nav>
 
     <!-- creating header to display club information -->
-    <div>
+    <div class="container-fluid">
         <h1 id="tabName"> Click A Section to Find Clubs</h1>
         <h4 id="classesFound">There are 66 Clubs</h4>
         <!--Maybe add dropdown menu in this div -->
     </div>
 
-    <!-- Displayed when no results are given for a search -->
-    <div id="invalidSearch">
+    <!-- Creating cards and Showing information -->
+    <div id="content" class="container-fluid">
 
-        <h1> Invalid Search</h1>
-        <p> We were unable to find a match for your search. Please try a different keyword or use the navigation bar. We are still updating the search functionality and apologize for any inconvenience. If you have suggestions please head over to our <a href="https://github.com/PZR2000/crls-club-review.git">Github Page</a> and create an issue so we can resolve it. </p>
-    </div>
+        <!-- Only visible when the webstie first loads -->
+        <div id="welcome">
+            <h1> Welcome to CRLS Club Registration</h1>
+            <img src="../Images/Logo.png" alt="logo">
+            <h3> Search through more than 60+ clubs that CRLS has to offer and sign up for the one that is right for you!</h3>
+            <h6> Click a section in the navigation bar to get started.</h6>
+        </div>
 
-    <!-- Is meant for the welcome screen -->
-    <div id="welcome">
-        <h1> Welcome to CRLS Club Registration</h1>
-        <img src="../Images/Logo.png" alt="logo">
-        <h3> Search through more than 60+ clubs that CRLS has to offer and sign up for the one that is right for you!</h3>
-        <h6> Click a section in the navigation bar to get started.</h6>
-    </div>
+        <!-- visible when person has no results for search -->
+        <div id="invalidSearch">
+            <h1> Invalid Search</h1>
+            <p> We were unable to find a match for your search. Please try a different keyword or use the navigation bar. We are still updating the search functionality and apologize for any inconvenience. If you have suggestions please head over to our <a href="https://github.com/PZR2000/crls-club-review.git">Github Page</a> and create an issue so we can resolve it. </p>
+        </div>
 
-    <!-- Content that displays all the clubs as well as individual sections -->
-    <div id="content" class="club-container">
-        <section id="knownSec" onclick="indCoursePage(this)">
-            <!-- location.href='#' -->
-            <img src="../Images/studGov.png" alt="Holder Image">
-            <div id="bottom-sec">
-                <h2 class="bottom-text">Biology</h2>
-                <h3 class="bottom-text"> Teacher: John Leefolt</h3>
-                <h4 class="bottom-text"> Room: 203</h4>
-                <p id="time" class="hideInfo"></p>
-                <p id="desc" class="hideInfo"></p>
+        <div class="row" id="cardDeck">
+            <div class="card allCards" id="knownSec" onclick="indCoursePage(this)">
+                <img class="card-img-top" src="club4.png" alt="Holder Image">
+                <div id="bottom-sec" class="card-body">
+                    <h3 id="clubName" class="bottom-text">Biology</h3>
+                    <h5 id="advName" class="bottom-text"> Teacher: John Leefolt</h5>
+                    <h6 id="roomNum" class="bottom-text"> Room: 203</h6>
+                    <p id="time" class="hideInfo"></p>
+                    <p id="desc" class="hideInfo"></p>
+                </div>
             </div>
-        </section>
+            <!-- This where other columns need to be added to the content section -->
 
-        <section id="indPage">
-            <div id="imgName">
-                <img src="../Images/studGov.png" alt="Holder Image">
-                <h1>Biology</h1>
-            </div>
-            <div id="botSec">
-                <h3 id="advisor"> Advisor: AnneMarie Curie</h3>
-                <h3 id="room"> Room: 1234 or Media Club</h3>
-                <h3 id="time"> Meet time: Wednesday 2:30pm-3:30pm</h3>
-                <p></p>
-                <!-- Maybe add ability for people to see links to various sites for those clubs -->
-                <!-- <h5>Link: </h5>
+        </div>
+
+        <!-- Visible when one of the cards in the cardDeck is clicked on -->
+        <div id="indPage" class="card mb-3">
+            <div class="container-fluid">
+                <div class=" row">
+                    <div id="imgCont" class="col-md-5">
+                        <img src="club4.png" alt="club image">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h1 id="name" class="card-title"> Club Name</h1>
+                            <h3 id="advisor" class="card-text">Advisor</h3>
+                            <h3 id="room" class="card-text"> Room: 1234 or Media Club</h3>
+                            <h3 id="time" class="card-text"> Meet time: Wednesday 2:30pm-3:30pm</h3>
+                            <p id="description" class="card-text"></p>
+                            <button id="signUp" type="button" onclick="signUpClicked()">Sign Up</button>
+                            <!-- Maybe add ability for people to see links to various sites for those clubs -->
+                            <!-- <h5>Link: </h5>
                 <a href="https://www.instagram.com/crls.cs/" target="_blank">Insta Page</a> -->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-        <button id="signUp" type="button" onclick="signUpClicked()">Sign Up</button>
+        </div>
+
     </div>
 
+    <!-- sticky footer -->
+    <footer class="sticky-bottom" id="sticky-footer">
+        <div class="container-fluid text-center">
+            <h4> &#169; 2020 Club Registration</h4>
+            <h3>CRLS</h3>
+            <h6>Developed By: Computer Science Club</h6>
+            <!-- maybe add this back in? Not rlly sure if it is necessary tho... <h6>Contact for more information at: <a href="#"> email@yahoo.com</a></h6> -->
 
-    <!-- footer area -->
-    <footer>
-        <h4> &#169; 2020 Club Registration</h4>
-        <h3>CRLS</h3>
-        <h6>Developed By: Computer Science Club</h6>
-        <!-- maybe add this back in? Not rlly sure if it is necessary tho... <h6>Contact for more information at: <a href="#"> email@yahoo.com</a></h6> -->
-
+        </div>
     </footer>
 
-    <script type="text/javascript" src="../js/main.js" defer></script>
+    <!-- loading JS and JQuery as well as bootstrap stuff: It's a cdn so you don't have to download any files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/main.js"></script> <!-- maybe put 'defer' in their again if js breaks -->
+
 </body></html>

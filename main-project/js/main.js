@@ -627,27 +627,36 @@ const clubsArray = [
 
 var val = "";
 
-/* clears the content section and creates a clean page essentially */
+/* clears the content section and creates a clean page */
 function updateUI() {
 
-    document.getElementById("indPage").style.display = "none";
     document.getElementById("welcome").style.display = "none";
-    document.getElementById("signUp").style.display = "none";
-    document.getElementById("desc").style.display = "none";
+    document.getElementById("cardDeck").style.display = "none";
+    document.getElementById("indPage").style.display = "none";
+    document.getElementById("tabName").style.display = "none";
+    document.getElementById("classesFound").style.display = "none";
     document.getElementById("time").style.display = "none";
-    document.getElementById("invalidSearch").style.visibility = "hidden";
+    document.getElementById("desc").style.display = "none";
+
+    document.getElementById("invalidSearch").style.display = "none";
+
     /* This hides the knownSec element */
     document.getElementById("knownSec").style.display = "none";
 
     const classList = document.getElementsByClassName("navBtn");
+
     for (let i = 0; i < classList.length; i++) {
         classList[i].style.border = "none";
     }
 
     /* This clears the content section */
-    document.querySelectorAll(".newElm").forEach(function (a) {
+    document.querySelectorAll(".newCont").forEach(function (a) {
         a.remove();
     })
+
+    document.querySelectorAll(".newElm").forEach(function (a) {
+        a.style.display = "none";
+    });
 }
 
 /* shows the list of clubs depending on what section a person clicked on */
@@ -655,10 +664,10 @@ function navFunction(elm) {
     updateUI();
     document.getElementById("tabName").style.display = "block";
     document.getElementById("classesFound").style.display = "block";
-
+    document.getElementById("cardDeck").style.display = "block";
 
     document.getElementById("tabName").textContent = elm.textContent;
-    elm.style.borderBottom = "5px solid #F2F7F2";
+    elm.style.borderBottom = "2px solid #F2F7F2";
 
     /* For figuring out how many clubs are in the array */
     var count = 0;
@@ -674,16 +683,17 @@ function navFunction(elm) {
     Ask other clubs to send an image they want to go on the site as well as the description, times, advisor, and room num.
     */
     for (let i = 0; i < clubsArray.length; i++) {
-        const newSec = document.getElementById('knownSec').cloneNode(true);
-        newSec.setAttribute('id', i);
-        newSec.setAttribute('class', 'newElm'); /*Used to delete the elms when new tab is clicked*/
-        newSec.style.display = "block";
 
         if (clubsArray[i].tags[0] === elm.id) {
+            const newSec = document.getElementById('knownSec').cloneNode(true);
+            newSec.setAttribute('id', i);
+            newSec.className = "card allCards newCont";
+            newSec.style.display = "block";
+
             // display the club
-            newSec.querySelector("h2").innerHTML = clubsArray[i].club;
-            newSec.querySelector("h3").innerHTML = "Advisor: " + clubsArray[i].advisor;
-            newSec.querySelector("h4").innerHTML = "Room: " + clubsArray[i].location;
+            newSec.querySelector("#clubName").innerHTML = clubsArray[i].club;
+            newSec.querySelector("#advName").innerHTML = "Advisor: " + clubsArray[i].advisor;
+            newSec.querySelector("#roomNum").innerHTML = "Room: " + clubsArray[i].location;
             newSec.querySelector("img").src = "../Images/" + clubsArray[i].img;
             if (clubsArray[i].hasOwnProperty('desc')) {
                 newSec.querySelector("#desc").innerHTML = clubsArray[i].desc;
@@ -692,33 +702,29 @@ function navFunction(elm) {
                 newSec.querySelector("#desc").innerHTML = "Description not provided"
                 newSec.querySelector("#time").innerHTML = "Not provided"
             }
-            document.getElementById("content").appendChild(newSec);
+
+            document.getElementById("cardDeck").appendChild(newSec);
         }
     }
+    console.log(document.getElementById("cardDeck"));
 }
 
 /* Shows an individual page for the specific club that the user clicked on */
 function indCoursePage(oneElm) {
+    updateUI();
     const ind = document.getElementById("indPage");
 
-    ind.querySelector("h1").innerHTML = oneElm.querySelector("h2").textContent;
     ind.querySelector("img").src = oneElm.querySelector("img").src;
-    ind.querySelector("#advisor").innerHTML = oneElm.querySelector("h3").textContent;
-    ind.querySelector("#room").innerHTML = oneElm.querySelector("h4").textContent;
+    ind.querySelector("#name").innerHTML = oneElm.querySelector("#clubName").textContent;
+    ind.querySelector("#advisor").innerHTML = oneElm.querySelector("#advName").textContent;
+    ind.querySelector("#room").innerHTML = oneElm.querySelector("#roomNum").textContent;
     ind.querySelector("#time").innerHTML = "Meet time: " + oneElm.querySelector("#time").textContent;
-    ind.querySelector("p").innerHTML = oneElm.querySelector("#desc").textContent;
+    ind.querySelector("#description").innerHTML = oneElm.querySelector("#desc").textContent;
 
-    document.querySelectorAll(".newElm").forEach(function (a) {
-        a.style.display = "none";
-    });
-
-    document.getElementById("tabName").style.display = "none";
-    document.getElementById("classesFound").style.display = "none";
-
-    ind.style.display = "block";
-    document.getElementById("signUp").style.display = "block";
-    document.getElementById("desc").style.display = "block";
     document.getElementById("time").style.display = "block";
+    document.getElementById("desc").style.display = "block";
+    ind.style.display = "block";
+
 }
 
 /* Searches through our massive club array to find what the user is looking for
@@ -741,15 +747,13 @@ function searchClubs() {
 
     if (chosenClub.length == 0) {
         updateUI();
-        document.getElementById("tabName").style.display = "none";
-        document.getElementById("classesFound").style.display = "none";
-        document.getElementById("invalidSearch").style.visibility = "visible";
+        document.getElementById("invalidSearch").style.display = "block";
     } else {
         showSearchedClubs(chosenClub);
     }
 }
 
-/* Is called when the user presse enter in the search bar */
+/* Is called when the user press enter in the search bar */
 function search(e) {
     if (e.keyCode === 13) {
         e.preventDefault(); // Ensure it is only this code that runs
@@ -772,18 +776,22 @@ function showSearchedClubs(club) {
     for (let i = 0; i < club.length; i++) {
         const newSec = document.getElementById('knownSec').cloneNode(true);
         newSec.setAttribute('id', i + 1);
-        newSec.setAttribute('class', 'newElm'); /*Used to delete the elms when new tab is clicked*/
-        newSec.style.display = "block";
+        //newSec.setAttribute('class', 'newElm'); /*Used to delete the elms when new tab is clicked*/
+        newSec.className = "card allCards newCont";
 
         // display the club
-        newSec.querySelector("h2").innerHTML = club[i].club;
-        newSec.querySelector("h3").innerHTML = "Advisor: " + club[i].advisor;
-        newSec.querySelector("h4").innerHTML = "Room: " + club[i].location;
+        newSec.querySelector("#clubName").innerHTML = club[i].club;
+        newSec.querySelector("#advName").innerHTML = "Advisor: " + club[i].advisor;
+        newSec.querySelector("#roomNum").innerHTML = "Room: " + club[i].location;
         newSec.querySelector("img").src = "../Images/" + club[i].img;
+
         if (club[i].hasOwnProperty('desc')) {
             newSec.querySelector("#desc").innerHTML = club[i].desc;
             newSec.querySelector("#time").innerHTML = club[i].time;
         }
+
+        newSec.style.display = "block";
+
         document.getElementById("content").appendChild(newSec);
     }
 
