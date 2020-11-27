@@ -688,7 +688,7 @@ function navFunction(elm) {
             const newSec = document.getElementById('knownSec').cloneNode(true);
             newSec.setAttribute('id', i);
             newSec.className = "card allCards newCont";
-            newSec.style.display = "block";
+            newSec.style.display = "inline-block";
 
             // display the club
             newSec.querySelector("#clubName").innerHTML = clubsArray[i].club;

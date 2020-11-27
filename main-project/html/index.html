@@ -32,11 +32,11 @@
     </div>
 
     <!-- Navigation menu created -->
-    <nav class="navbar navbar-expand-xl navbar-light" id="persNav">
+    <nav class="navbar navbar-expand-xl navbar-dark" id="persNav">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" id="dropButton" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <p> Club Themes</p>
+            <span id="navName"> Club Themes</span>
+            <span id="navIcon" class="navbar-toggler-icon text-white"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -78,7 +78,7 @@
             <p> We were unable to find a match for your search. Please try a different keyword or use the navigation bar. We are still updating the search functionality and apologize for any inconvenience. If you have suggestions please head over to our <a href="https://github.com/PZR2000/crls-club-review.git">Github Page</a> and create an issue so we can resolve it. </p>
         </div>
 
-        <div class="row" id="cardDeck">
+        <div class="row d-flex" id="cardDeck">
             <div class="card allCards" id="knownSec" onclick="indCoursePage(this)">
                 <img class="card-img-top" src="club4.png" alt="Holder Image">
                 <div id="bottom-sec" class="card-body">
