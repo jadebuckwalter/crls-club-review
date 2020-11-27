@@ -686,7 +686,6 @@ function navFunction(elm) {
 
         if (clubsArray[i].tags[0] === elm.id) {
             const newSec = document.getElementById('knownSec').cloneNode(true);
-            newSec.setAttribute('id', i);
             newSec.className = "card allCards newCont";
             newSec.style.display = "inline-block";
 
@@ -775,8 +774,6 @@ function showSearchedClubs(club) {
     /* creates the content for the content section */
     for (let i = 0; i < club.length; i++) {
         const newSec = document.getElementById('knownSec').cloneNode(true);
-        newSec.setAttribute('id', i + 1);
-        //newSec.setAttribute('class', 'newElm'); /*Used to delete the elms when new tab is clicked*/
         newSec.className = "card allCards newCont";
 
         // display the club
@@ -790,9 +787,9 @@ function showSearchedClubs(club) {
             newSec.querySelector("#time").innerHTML = club[i].time;
         }
 
-        newSec.style.display = "block";
+        newSec.style.display = "inline-block";
 
-        document.getElementById("content").appendChild(newSec);
+        document.getElementById("cardDeck").appendChild(newSec);
     }
 
 }
