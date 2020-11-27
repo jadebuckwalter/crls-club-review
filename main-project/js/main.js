@@ -746,6 +746,12 @@ function searchClubs() {
 
     if (chosenClub.length == 0) {
         updateUI();
+
+        document.getElementById("tabName").textContent = "You Searched For: " + val;
+        document.getElementById("classesFound").textContent = "0 Clubs Found";
+        document.getElementById("tabName").style.display = "block";
+        document.getElementById("classesFound").style.display = "block";
+
         document.getElementById("invalidSearch").style.display = "block";
     } else {
         showSearchedClubs(chosenClub);
