@@ -739,7 +739,7 @@ function searchClubs() {
             chosenClub.push(clubsArray[i])
         } else if (clubsArray[i].club.toUpperCase() == upperVal || clubsArray[i].club.toUpperCase().split(" ").includes(upperVal)) {
             chosenClub.push(clubsArray[i])
-        } else if (clubsArray[i].location === val.toLowerCase()) {
+        } else if (clubsArray[i].location == val.toLowerCase() || clubsArray[i].location.toLowerCase().split(" ").includes(val.toLowerCase())) {
             chosenClub.push(clubsArray[i])
         }
     }
@@ -753,12 +753,13 @@ function searchClubs() {
 }
 
 /* Is called when the user press enter in the search bar */
-function search(e) {
+function search(e, elm) {
     if (e.keyCode === 13) {
         e.preventDefault(); // Ensure it is only this code that runs
         updateUI();
         searchClubs();
         document.getElementById("searchBar").value = ""
+        elm.blur();
     }
 }
 

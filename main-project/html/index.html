@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Club Registration Website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,8 +24,7 @@
             </div>
             <div class="col-sm d-flex justify-content-center">
                 <div id="input_container">
-                    <input class="form-control" type="text" id="searchBar" onkeypress="search(event)" onkeyup="setValue(this)" name="searchBar" placeholder="Search for a Club, Teacher, or Room" aria-label="Search" />
-                    <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
+                    <input class="form-control" type="text" id="searchBar" onkeypress="search(event, this)" onkeyup="setValue(this)" name="searchBar" placeholder="Search for a Club, Teacher, or Room" aria-label="Search" />                    <img id="searchIcon" src="../Images/searchIcon.png" alt="Search Icon">
                 </div>
             </div>
         </div>
@@ -41,14 +40,14 @@
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="nav navbar-nav">
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="ela">English &amp; History</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="stem">STEM</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="communityService">Community Service</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="musicArts">Music &amp; Arts</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="religion">Religion &amp; Culture</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="politics">Politics</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="activism">Activisim</a></li>
-                <li> <a class="nav-item navBtn" onclick="navFunction(this)" id="miscellaneous">Additional Clubs</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="ela">English &amp; History</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="stem">STEM</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="communityService">Community Service</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="musicArts">Music &amp; Arts</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="religion">Religion &amp; Culture</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="politics">Politics</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="activism">Activisim</a></li>
+                <li> <a data-toggle="collapse" data-target="#navbarNav" class="nav-item navBtn" onclick="navFunction(this)" id="miscellaneous">Additional Clubs</a></li>
             </ul>
         </div>
 
