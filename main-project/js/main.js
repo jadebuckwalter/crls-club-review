@@ -216,7 +216,7 @@ const clubsArray = [
         "tags": [
             "musicArts"
         ],
-        "img": "bookClub.png"
+        "img": "ceramics.png"
     },
     {
         "club": "Chamber Music",
@@ -225,7 +225,7 @@ const clubsArray = [
         "tags": [
             "musicArts"
         ],
-        "img": "bookClub.png"
+        "img": "chMusic.png"
     },
     {
         "club": "Henna Club",
@@ -234,7 +234,7 @@ const clubsArray = [
         "tags": [
             "musicArts"
         ],
-        "img": "bookClub.png"
+        "img": "henna.png"
     },
     {
         "club": "K-Pop Club",
@@ -243,7 +243,7 @@ const clubsArray = [
         "tags": [
             "musicArts"
         ],
-        "img": "bookClub.png"
+        "img": "Kpop.png"
     },
     {
         "club": "Media Arts Club",
@@ -765,7 +765,7 @@ function search(e, elm) {
         updateUI();
         searchClubs();
         document.getElementById("searchBar").value = ""
-        elm.blur();
+        elm.focus();
     }
 }
 
