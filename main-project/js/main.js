@@ -765,7 +765,7 @@ function search(e, elm) {
         updateUI();
         searchClubs();
         document.getElementById("searchBar").value = ""
-        elm.focus();
+        elm.blur();
     }
 }
 
