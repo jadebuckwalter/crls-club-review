@@ -20,6 +20,11 @@ body {
     margin-left: 20px;
 }
 
+#logo:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 header {
     font-family: Quicksand;
     font-style: normal;

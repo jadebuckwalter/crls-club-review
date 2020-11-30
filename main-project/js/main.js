@@ -806,6 +806,11 @@ function setValue(txt) {
     val = txt.value
 }
 
+function loadMain() {
+    updateUI();
+    document.getElementById("welcome").style.display = "block";
+}
+
 /* Is run when the user clicks the sign up button for a club */
 function signUpClicked() {
 
